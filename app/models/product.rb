@@ -26,7 +26,7 @@ class Product < ActiveRecord::Base
     end
 
     def self.sorted_by(field)
-        if !column_names.include?(field) 
+        if !self.column_names.include?(field) 
             field = 'name' 
         end
         return self.order(field)

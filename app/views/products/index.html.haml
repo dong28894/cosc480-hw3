@@ -3,8 +3,14 @@
 
   %table.products_table
     %tr.products_header
-      %th Name
-      %th Description
-      %th Appropriate ages
-      %th Price
+      %th= link_to 'Name', products_path(sorted_by: 'name') 
+      %th= link_to 'Description', products_path(sorted_by: 'description')
+      %th= link_to 'Appropriate ages', products_path(sorted_by: 'minimum_age_appropriate')
+      %th= link_to 'Price', products_path(sorted_by: 'price')
+    - @products.each do |product|
+      %tr
+        %td{:class => 'productname'}= link_to product.name, product_path(product.id) 
+        %td= product.description
+        %td= product.age_range
+        %td= number_to_currency(product.price)
 

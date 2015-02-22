@@ -1,3 +1,13 @@
 #main
   %table.products_table
-
+    %tr.products_header
+      %th Name
+      %th Description
+      %th Appropriate ages
+      %th Price
+    %tr
+      %td= @product.name 
+      %td= @product.description
+      %td= @product.age_range
+      %td= number_to_currency(@product.price)
+  %p= link_to "Back to product list", products_path
