@@ -5,9 +5,11 @@
       %th Description
       %th Appropriate ages
       %th Price
+      %th Image
     %tr
       %td= @product.name 
       %td= @product.description
       %td= @product.age_range
       %td= number_to_currency(@product.price)
+      %td= image_tag(@product.image.url(:medium)
   %p= link_to "Back to product list", products_path
