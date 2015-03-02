@@ -1,6 +1,12 @@
 #main
   %h3 All products
 
+  -if flash[:notice] 
+    %p= flash[:notice]
+  -elsif flash[:warning]
+    %p= flash[:warning]
+  -end
+  
   %table.products_table
     %tr.products_header
       %th= link_to 'Name', products_path(sorted_by: 'name') 
@@ -15,3 +21,5 @@
         %td= product.age_range
         %td{:align => 'right'}= number_to_currency(product.price)
         %td= image_tage(p.images.url(:thumb))
+
+  %button.create_product= link_to 'Create product', new_product_path
