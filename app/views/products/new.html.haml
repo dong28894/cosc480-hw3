@@ -1,10 +1,18 @@
 #main
   =form_for empty_product do |f|
-  
-  =f.text_field :name
-  =f.text_field :description
-  =f.number_field :price
-  =f.number_field :minimum_age_appropriate
-  =f.number_field :maximum_age_appropriate
+    =f.label :name
+    =f.text_field :name
 
-  =f.submit
+    =f.label :description
+    =f.text_field :description
+
+    =f.label :price
+    =f.number_field :price
+
+    =f.label :minimum_age_appropriate
+    =f.number_field :minimum_age_appropriate
+    
+    =f.label :maximum_age_appropriate
+    =f.number_field :maximum_age_appropriate
+
+    =f.submit
