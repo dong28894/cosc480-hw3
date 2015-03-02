@@ -37,4 +37,18 @@ class Product < ActiveRecord::Base
         end
         return self.order(field)
     end
+
+    def self.filter(hash)
+        # Only support min age and max price at the moment
+        result = self
+        if hash[:minimum_age]
+            result = result.where("minimum_age_appropriate >= ? OR minimum_age_appropriate == nil", hash[:minimum_age]) 
+        end
+        if hash[:maximum_price]
+            result = result.where("price < ?", hash[:maximum_price])
+        end
+        return result
+    end
+
+
 end
