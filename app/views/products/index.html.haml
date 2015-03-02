@@ -12,5 +12,5 @@
         %td{:class => 'productname'}= link_to product.name, product_path(product.id) 
         %td= product.description
         %td= product.age_range
-        %td= number_to_currency(product.price)
+        %td{:align => 'right'}= number_to_currency(product.price)
 
