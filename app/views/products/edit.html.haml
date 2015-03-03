@@ -1,10 +1,29 @@
 #main
-  =form_for empty_product, :method => patch  do |f|
-  
-  =f.text_field :name
-  =f.text_field :description
-  =f.number_field :price
-  =f.number_field :minimum_age_appropriate
-  =f.number_field :maximum_age_appropriate
+  =form_for @product, :method => :patch do |f|
+    %p
+      =f.label :name
+      =f.text_field :name
 
-  =f.submit
+    %p
+      =f.label :description
+      =f.text_field :description
+
+    %p
+      =f.label :price
+      =f.number_field :price, :step => 0.01
+
+    %p
+      =f.label :minimum_age_appropriate
+      =f.number_field :minimum_age_appropriate
+
+    %p
+      =f.label :maximum_age_appropriate
+      =f.number_field :maximum_age_appropriate
+
+    %p
+      =f.label :image
+      =f.file_field(:image)
+    %p=f.submit
+
+  %p= link_to "Back to product page", products_path(@product)
+  
