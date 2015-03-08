@@ -34,6 +34,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Add paperclip to handle image
 gem "paperclip", "~> 4.2"
 
+# Stuff from HW5 (the 4 lines below)
+group :test do
+    gem 'simplecov', :require => false
+    gem 'database_cleaner'
+end
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
