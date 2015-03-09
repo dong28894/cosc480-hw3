@@ -37,4 +37,15 @@ RSpec.describe ProductsController, type: :controller do
       expect(response).to render_template(:show)
     end
   end
+
+  it "should redirect to new on failure" do
+    p = Product.new
+    Product.should_receive(:new).and_return(p)
+    # expect(Product).to receive(:new) { p }
+    p.should_receive(:save).and_return(nil)
+    # expect(p).to receive(:save) { nil }
+    post :create, { :product => { "name"=>"dummy", "price"=>"11.50" } }
+    response.should redirect_to(new_product_path)
+    # expect(response).to redirect_to(new_product_path)
+  end
 end

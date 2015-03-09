@@ -56,12 +56,12 @@ class ProductsController < ApplicationController
         redirect_to product_path(@product)
     end
 
-    def destroy
-        @product = Product.find(params[:id])
-        @product.destroy
-        flash[:notice] = "Product #{@product.name} deleted."
-        redirect_to products_path
-    end
+  #   def destroy
+  #       @product = Product.find(params[:id])
+  #       @product.destroy
+  #       flash[:notice] = "Product #{@product.name} deleted."
+  #       redirect_to products_path
+  #   end
 
 private 
     def create_update_params
