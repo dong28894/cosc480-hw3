@@ -122,14 +122,30 @@ end
 
 # Check that product are in sorted order 
 Then /^I should see product price in sorted order$/ do
-    pending
+  price = []
+  page.all('tr.product_row').each do |row|
+    # Get the price, remove the $ symbol
+    price << row.all('td').at(3).text.gsub(/[^\d\.]/,'').to_f
+  end
+  puts price
+  expect(price.sort).to eq(price)
+  
 end
 
-
-Then /^I should see the image "(.*?)"$/ do |arg1|
-  page.find('img')['src'].should have_content arg1
-#  page.should have_selector("img[src$='/images/#{arg1}']")
+Then /^I should see product name in sorted order$/ do
+  name  = []
+  page.all('tr.product_row').each do |row|
+    # Get the name of the product
+    name << row.all('td').at(0).text
+  end
+  puts name
+  # Check that the names are sorted
+  expect(name.sort).to eq(name)
   
+end
+
+Then /^I should see the image "(.*?)"$/ do |name|
+  page.find('img')['src'].should have_content name
 end
 
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|

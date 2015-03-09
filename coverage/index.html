@@ -14,7 +14,7 @@
       <img src="./assets/0.9.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-03-08T22:07:19-04:00">2015-03-08T22:07:19-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-03-09T16:25:33-04:00">2015-03-09T16:25:33-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         10.78
+         11.27
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>39</td>
         <td>33</td>
         <td>6</td>
-        <td>4.5</td>
+        <td>4.8</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>33</td>
         <td>33</td>
         <td>0</td>
-        <td>19.8</td>
+        <td>20.6</td>
       </tr>
       
     </tbody>
@@ -113,7 +113,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.38
+         4.66
        </span>
     </span> hits/line)
   </h2>
@@ -155,7 +155,7 @@
         <td>39</td>
         <td>33</td>
         <td>6</td>
-        <td>4.5</td>
+        <td>4.8</td>
       </tr>
       
     </tbody>
@@ -170,7 +170,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         19.8
+         20.6
        </span>
     </span> hits/line)
   </h2>
@@ -202,7 +202,7 @@
         <td>33</td>
         <td>33</td>
         <td>0</td>
-        <td>19.8</td>
+        <td>20.6</td>
       </tr>
       
     </tbody>
@@ -425,8 +425,8 @@
           <code class="ruby">    def index</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="3">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="3">
+          <span class="hits">31</span>
           
           <code class="ruby">        if params[:set_filter] # The filter button was clicked</code>
         </li>
@@ -503,8 +503,8 @@
           <code class="ruby">        </code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="16">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="16">
+          <span class="hits">31</span>
           
           <code class="ruby">        session[:sorted_by] = params[:sorted_by] unless !params[:sorted_by]</code>
         </li>
@@ -515,8 +515,8 @@
           <code class="ruby">        if (session[:sorted_by] &amp;&amp; !params[:sorted_by]) || </code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="18">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="18">
+          <span class="hits">31</span>
           
           <code class="ruby">            (session[:min_age] &amp;&amp; params[:min_age] == &quot;&quot;) ||</code>
         </li>
@@ -527,14 +527,14 @@
           <code class="ruby">            (session[:max_price] &amp;&amp; params[:max_price] == &quot;&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="20">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="20">
+          <span class="hits">4</span>
           
           <code class="ruby">            flash.keep</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="21">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="21">
+          <span class="hits">4</span>
           
           <code class="ruby">            redirect_to products_path(:sorted_by =&gt; session[:sorted_by],</code>
         </li>
@@ -563,8 +563,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="26">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="26">
+          <span class="hits">31</span>
           
           <code class="ruby">        @products = Product.filter(session)</code>
         </li>
@@ -593,8 +593,8 @@
           <code class="ruby">    def show</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="31">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="31">
+          <span class="hits">7</span>
           
           <code class="ruby">        @product = Product.find(params[:id])        </code>
         </li>
@@ -977,8 +977,8 @@
           <code class="ruby">    def age_range</code>
         </li>
       
-        <li class="covered" data-hits="79" data-linenumber="6">
-          <span class="hits">79</span>
+        <li class="covered" data-hits="81" data-linenumber="6">
+          <span class="hits">81</span>
           
           <code class="ruby">        if self.minimum_age_appropriate == nil &amp;&amp; self.maximum_age_appropriate == nil</code>
         </li>
@@ -989,14 +989,14 @@
           <code class="ruby">            return &#39;0 and above&#39;</code>
         </li>
       
-        <li class="covered" data-hits="59" data-linenumber="8">
-          <span class="hits">59</span>
+        <li class="covered" data-hits="61" data-linenumber="8">
+          <span class="hits">61</span>
           
           <code class="ruby">        elsif self.minimum_age_appropriate != nil &amp;&amp; self.maximum_age_appropriate == nil</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="9">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="26" data-linenumber="9">
+          <span class="hits">26</span>
           
           <code class="ruby">            return self.minimum_age_appropriate.to_s &lt;&lt; &quot; and above&quot;</code>
         </li>
@@ -1133,8 +1133,8 @@
           <code class="ruby">    def self.sorted_by(field)</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="32">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="33" data-linenumber="32">
+          <span class="hits">33</span>
           
           <code class="ruby">        if !self.column_names.include?(field) </code>
         </li>
@@ -1151,8 +1151,8 @@
           <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="35">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="33" data-linenumber="35">
+          <span class="hits">33</span>
           
           <code class="ruby">        return self.order(field)</code>
         </li>
@@ -1181,32 +1181,32 @@
           <code class="ruby">        # Only support min age and max price at the moment</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="40">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="40">
+          <span class="hits">31</span>
           
           <code class="ruby">        hash[:sorted_by] = &quot;name&quot; unless hash[:sorted_by]</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="41">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="41">
+          <span class="hits">31</span>
           
           <code class="ruby">        list = self.sorted_by(hash[:sorted_by])</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="42">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="42">
+          <span class="hits">31</span>
           
           <code class="ruby">        result = []</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="43">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="43">
+          <span class="hits">31</span>
           
           <code class="ruby">        if hash[:max_price]</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="44">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="44">
+          <span class="hits">7</span>
           
           <code class="ruby">            list = list.where(&quot;price &lt;= ?&quot;, hash[:max_price])</code>
         </li>
@@ -1229,8 +1229,8 @@
           <code class="ruby">        #debugger </code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="48">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="48">
+          <span class="hits">31</span>
           
           <code class="ruby">        if hash[:min_age] != nil</code>
         </li>
@@ -1271,8 +1271,8 @@
           <code class="ruby">        else</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="55">
-          <span class="hits">27</span>
+        <li class="covered" data-hits="29" data-linenumber="55">
+          <span class="hits">29</span>
           
           <code class="ruby">            result = list</code>
         </li>
@@ -1295,8 +1295,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="59">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="31" data-linenumber="59">
+          <span class="hits">31</span>
           
           <code class="ruby">        return result</code>
         </li>
