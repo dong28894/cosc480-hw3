@@ -30,13 +30,13 @@ Feature: Filter products by age and price
 
   Scenario: sort by price
     When I go to the products page
-    And I press "Price"
+    And I follow "Price"
     Then I should be on the products page
     Then I should see product price in sorted order
 
   Scenario: sort by name
     When I go to the products page
-    And I press "Name"
+    And I follow "Name"
     Then I should be on the products page
     Then I should see product name in sorted order
 
@@ -45,10 +45,10 @@ Feature: Filter products by age and price
     And I fill in "Maximum price" with "3.50"
     And I press "Filter products"
     Then I should be on the products page
-    When I press "Price"
+    When I follow "Price"
     Then I should be on the products page
     And I should see product price in sorted order
-    When I press "slinky"
+    When I follow "slinky"
     Then I go to the products page
     Then I should see product price in sorted order
     And I should see "slinky"

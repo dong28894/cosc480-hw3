@@ -12,11 +12,11 @@ Feature: Update existing product
 
   Scenario: Create a new product without specific image
     Given I am on the products page
-    When I press "fluffy bunny"
+    When I follow "fluffy bunny"
     Then I should see "fluffy and lovable"
     And I should see "$17.50"
     And I should see the image "noimg.jpg"
-    When I press "Edit product details"
+    When I follow "Edit product details"
     And I fill in "Description" with "less fluffy than you'd think"
     And I fill in "Minimum age appropriate" with "4"
     And I fill in "Price" with "999.95"

@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
                 session[:max_price] = params[:max_price].to_f
             end
         end
-            
+        
         session[:sorted_by] = params[:sorted_by] unless !params[:sorted_by]
         if (session[:sorted_by] && !params[:sorted_by]) || 
             (session[:min_age] && params[:min_age] == "") ||
@@ -25,13 +25,6 @@ class ProductsController < ApplicationController
 
         @products = Product.filter(session)
         
- #       if session[:sorted_by] != nil
-  #          @products = @product.sorted_by(session[:sorted_by])
-   #     else
-    #        @products = @product.sorted_by('name')
-
-        
-     #   end
     end
 
     def show
@@ -44,7 +37,7 @@ class ProductsController < ApplicationController
     def create
         p = Product.new(create_update_params)
         if p.save
-            flash[:notice] = "Product #{p.name} successfully added"
+            flash[:notice] = "New product #{p.name} created successfully"
             redirect_to products_path
         else
             flash[:warning] = "Product couldn't be created"

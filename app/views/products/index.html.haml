@@ -2,15 +2,15 @@
   %h3 All products
 
   =form_tag("/", {:method => "get"}) do
-    =label_tag :max_price, 'Maximum Price'
+    =label_tag :max_price, 'Maximum price'
     =number_field_tag :max_price, session[:max_price], :step => 0.01
       
-    =label_tag :min_age, 'Minimum Age'
+    =label_tag :min_age, 'Minimum age'
     =number_field_tag :min_age, session[:min_age]
 
     =hidden_field_tag :set_filter, true
 
-    =submit_tag 'Filter'
+    =submit_tag 'Filter products'
 
   %table.products_table
     %tr.products_header

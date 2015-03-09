@@ -110,6 +110,28 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
+Then /^I should see that "(.*?)" has a price of "(.*?)"$/ do |arg1, arg2|
+  find('tr', text: arg1).should have_content(arg2)
+end
+
+
+
+Then /^I should see that "(.*?)" has an image "(.*?)"$/ do |arg1, arg2|
+  find('tr', text: arg1).find('img')['src'].should have_content arg2
+end
+
+# Check that product are in sorted order 
+Then /^I should see product price in sorted order$/ do
+    pending
+end
+
+
+Then /^I should see the image "(.*?)"$/ do |arg1|
+  page.find('img')['src'].should have_content arg1
+#  page.should have_selector("img[src$='/images/#{arg1}']")
+  
+end
+
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)
 
@@ -252,3 +274,19 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+
+# Add products to table
+Given /^these products:$/i do |table|
+    table.hashes.each do |fhash|
+        if fhash.has_key? "minage"
+            fhash["minimum_age_appropriate"] = fhash.delete("minage")
+        end
+        if fhash.has_key? "maxage"
+            fhash["maximum_age_appropriate"] = fhash.delete("maxage")
+        end
+        Product.create!(fhash)
+    end
+end
+
+

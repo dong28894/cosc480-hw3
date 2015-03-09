@@ -37,6 +37,7 @@ class Product < ActiveRecord::Base
 
     def self.filter(hash)
         # Only support min age and max price at the moment
+        hash[:sorted_by] = "name" unless hash[:sorted_by]
         list = self.sorted_by(hash[:sorted_by])
         result = []
         if hash[:max_price]
